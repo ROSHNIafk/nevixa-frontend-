@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Student Form</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    margin: 0;
+    padding: 20px;
+    color: #000;
+  }
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+  }
+  h2 { margin-bottom: 10px; }
+  label { font-weight: bold; }
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  th, td {
+    padding: 8px;
+    text-align: center;
+  }
+  .submit-btn {
+    margin-top: 30px;
+    padding: 15px 32px;
+    font-size: 18px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2>Student Information Form</h2>
+
+<form action="https://formspree.io/f/mblnkwgq" method="POST">
+
+<label>1. What is your name?</label>
+<input type="text" name="teacher_name" required />
+
+<label>2. School name</label>
+<input type="text" name="school_name" required />
+
+<label>3. School code</label>
+<input type="text" name="school_code" required />
+
+<h3>Student Details (100 Rows)</h3>
+
+<table>
+<tr>
+  <th>Serial</th>
+  <th>GR Number</th>
+  <th>Student Name</th>
+  <th>Father Name</th>
+  <th>Father No More</th>
+  <th>Mother No More</th>
+</tr>
+
+<!-- 100 rows start -->
+
+<!-- I will generate rows 1 to 100 automatically -->
+
+<script>
+document.write(`
+${Array.from({length:100}, (_,i)=>`
+<tr>
+<td>${i+1}</td>
+<td><input type="text" name="gr_${i+1}"></td>
+<td><input type="text" name="student_${i+1}"></td>
+<td><input type="text" name="father_${i+1}"></td>
+<td><input type="checkbox" name="father_no_more_${i+1}"></td>
+<td><input type="checkbox" name="mother_no_more_${i+1}"></td>
+</tr>
+`).join('')}
+`);
+</script>
+
+</table>
+
+<button type="submit" class="submit-btn">Submit Form</button>
+
+</form>
+</div>
+</body>
+</html>
