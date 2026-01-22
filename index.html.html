@@ -1,115 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Student Form</title>
+<html>
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #ffffff;
-    margin: 0;
-    padding: 20px;
-    color: #000;
+<head>
+  <title>NEVIXA</title>
+  
+   <!-- Add Google Font for M PLUS Rounded 1c -->
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    
+  /*  marigns of announcement bar  */
+   
+  body, h5 ,h2 { 
+    margin: 0; 
+    padding: 0;
   }
-  .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 10px;
-    background: #fff;
-    border: 1px solid #ddd;
-  }
-  h2 { margin-bottom: 10px; }
-  label { font-weight: bold; }
-  input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    margin: 8px 0 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  table, th, td {
-    border: 1px solid #ccc;
-  }
-  th, td {
-    padding: 8px;
+
+  /* Announcement bar styles */
+  .announcement {    
+    background-color: #FF00C8; 
+    color: white;             
     text-align: center;
+    margin: 0;
+    padding: 5px;
+    font-size: 15px;           /* desktop font size */
+    font-family: Arial, sans-serif;
   }
-  .submit-btn {
-    margin-top: 30px;
-    padding: 15px 32px;
-    font-size: 18px;
-    background: #28a745;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+
+  @media (max-width: 768px) {     /*Mobile font size   */
+    .announcement {
+      font-size: 15px; 
+    }
   }
-</style>
+
+  /* NEVIXA logo */
+  .nevixa {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: black; font-size:50px; margin-top: 10px; margin-buttom: 20px;
+  }
+/*  Responsive logo font size */
+    /* modile font size */
+     @media (max-width: 768px) {
+      .nevixa {
+        font-size: 10px; 
+      }
+    }
+  /* logo color for dark/light mode on mobile */
+  @media (max-width: 768px) {
+    @media (prefers-color-scheme: dark) {
+      .nevixa {
+        color: white;
+      }
+    }
+    @media (prefers-color-scheme: light) {
+      .nevixa {
+        color: black;
+      }
+    }
+  }
+
+  /* Desktop logo color */
+  @media (min-width: 769px) {
+    .nevixa {
+      color: black;
+    }
+  }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <!-- ANNOUNCEMENT BAR -->
+  <center>
+    <h5 class = "announcement">
+      Free Home Delivery All Over Pakistan
+    </h5>
+  </center>
 
-<h2>Student Information Form</h2>
+  <!-- NEVIXA LOGO -->
+  <center>
+    <h2 class="nevixa">NEVIXA</h2>
+  </center>
 
-<form action="https://formspree.io/f/mblnkwgq" method="POST">
-
-<label>1. What is your name?</label>
-<input type="text" name="teacher_name" required />
-
-<label>2. School name</label>
-<input type="text" name="school_name" required />
-
-<label>3. School code</label>
-<input type="text" name="school_code" required />
-
-<h3>Student Details (100 Rows)</h3>
-
-<table>
-<tr>
-  <th>Serial</th>
-  <th>GR Number</th>
-  <th>Student Name</th>
-  <th>Father Name</th>
-  <th>Father No More</th>
-  <th>Mother No More</th>
-</tr>
-
-<!-- 100 rows start -->
-
-<!-- I will generate rows 1 to 100 automatically -->
-
-<script>
-document.write(`
-${Array.from({length:100}, (_,i)=>`
-<tr>
-<td>${i+1}</td>
-<td><input type="text" name="gr_${i+1}"></td>
-<td><input type="text" name="student_${i+1}"></td>
-<td><input type="text" name="father_${i+1}"></td>
-<td><input type="checkbox" name="father_no_more_${i+1}"></td>
-<td><input type="checkbox" name="mother_no_more_${i+1}"></td>
-</tr>
-`).join('')}
-`);
-</script>
-
-</table>
-
-<button type="submit" class="submit-btn">Submit Form</button>
-
-</form>
-</div>
 </body>
 </html>
+
+
+
